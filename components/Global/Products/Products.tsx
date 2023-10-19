@@ -1,16 +1,25 @@
 import { Card, CardBody, CardFooter, Image, Link } from "@nextui-org/react";
 
+import { useRouter } from "next/router";
 import { productsList } from "../../../base";
 
 export const Products = () => {
+  const { query } = useRouter();
+  let products = productsList;
+
+  if (query?.search) {
+    products = products.filter((product) =>
+      product.title
+        .toLowerCase()
+        .includes((query.search as string).toLowerCase())
+    );
+  }
+
   return (
     <>
       <div className="gap-8 grid grid-cols-2 sm:grid-cols-3 mx-2">
-        {productsList.map((item) => (
-          <Link
-            href={`/products/${item.title.toLowerCase()}`}
-            key={item.title.toLowerCase()}
-          >
+        {products.map((item) => (
+          <Link href={`/products/${item.id}`} key={item.title.toLowerCase()}>
             <Card
               shadow="sm"
               isPressable
@@ -30,7 +39,7 @@ export const Products = () => {
               <CardFooter className="text-small justify-between mt-2 block md:flex">
                 <h4 className="font-bold text-2xl">{item.title}</h4>
                 <p className="text-white font-bold text-2xl bg-blue-700 p-2">
-                  {item.price}
+                  £{item.price}
                 </p>
               </CardFooter>
             </Card>

@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { productsList } from "../../base";
+import { productsList, useCart } from "../../base";
 
 const ProductViewPage = () => {
-  const params = useParams<{ productName: string }>();
+  const params = useParams<{ productId: string }>();
 
   const product = productsList.find(
-    (product) => product.title.toLowerCase() === params?.productName
+    (product) => product.id === params?.productId
   );
+
+  const addToCart = useCart((state) => state.addToCart);
+  const carts = useCart((state) => state.carts);
 
   if (!product) {
     return null;
@@ -27,10 +30,20 @@ const ProductViewPage = () => {
                   fill
                 />
               </div>
-              <div className="flex justify-center -mx-2 mb-4">
+              <div className="-mx-2 mb-4">
                 <div className="w-full px-2">
-                  <button className="w-full bg-gray-900 text-white text-xl py-2 px-4 rounded-full font-bold hover:bg-gray-800">
-                    Add to Cart
+                  <button
+                    onClick={() => {
+                      addToCart(product.id);
+                    }}
+                    className="w-full bg-gray-900 text-white text-xl py-2 px-4 rounded-full font-bold hover:bg-gray-800"
+                  >
+                    Add to Cart ({carts.length})
+                  </button>
+                </div>
+                <div className="w-full px-2 mt-4">
+                  <button className="w-full bg-pink-900 text-white text-xl py-2 px-4 rounded-full font-bold hover:bg-pink-800">
+                    Checkout
                   </button>
                 </div>
               </div>
