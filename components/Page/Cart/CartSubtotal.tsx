@@ -18,7 +18,7 @@ export const CartSubtotal = () => {
       </div>
       <div className="flex justify-between">
         <p className="text-gray-700 text-xl font-bold ">Shipping</p>
-        <p className="text-gray-700 text-xl">$4.99</p>
+        <p className="text-gray-700 text-xl">£4.99</p>
       </div>
       <hr className="my-4" />
       <div className="flex justify-between">
