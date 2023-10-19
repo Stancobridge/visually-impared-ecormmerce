@@ -32,7 +32,7 @@ export const CartSubtotal = () => {
                 0
               ) + 4.99
             )}
-            USD
+            
           </p>
         </div>
       </div>
