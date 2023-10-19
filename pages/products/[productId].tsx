@@ -1,4 +1,6 @@
 import Image from "next/image";
+
+import { Link } from "@nextui-org/react";
 import { useParams } from "next/navigation";
 import { productsList, useCart } from "../../base";
 
@@ -38,13 +40,18 @@ const ProductViewPage = () => {
                     }}
                     className="w-full bg-gray-900 text-white text-xl py-2 px-4 rounded-full font-bold hover:bg-gray-800"
                   >
-                    Add to Cart ({carts.length})
+                    Add to Cart (
+                    {carts.find((cart) => cart.id === params.productId)
+                      ?.quantity ?? 0}
+                    )
                   </button>
                 </div>
                 <div className="w-full px-2 mt-4">
-                  <button className="w-full bg-pink-900 text-white text-xl py-2 px-4 rounded-full font-bold hover:bg-pink-800">
-                    Checkout
-                  </button>
+                  <Link href="/cart" className="w-full">
+                    <button className="w-full bg-pink-900 text-white text-xl py-2 px-4 rounded-full font-bold hover:bg-pink-800">
+                      Checkout
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
