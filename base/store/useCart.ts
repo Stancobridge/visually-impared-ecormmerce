@@ -15,12 +15,16 @@ export interface IUseCart {
   carts: IProduct[];
   addToCart: (productId: string) => void;
   reduceCart: (productId: string) => void;
+  clearCart: () => void;
 }
 
 export const useCart = create(
   persist<IUseCart>(
     (set, get) => ({
       carts: [],
+      clearCart: () => {
+        set({ carts: [] });
+      },
       addToCart: (productId: string) => {
         const product = productsList.find((cart) => cart.id === productId);
         if (product) {

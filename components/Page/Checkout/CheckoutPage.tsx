@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import { useCart } from "../../../base";
 
 export default function CheckoutPage() {
   const carts = useCart((state) => state.carts);
+  const { push } = useRouter();
 
   return (
     <div className="grid sm:px-10 lg:grid-cols-2">
@@ -195,7 +197,20 @@ export default function CheckoutPage() {
             </p>
           </div>
         </div>
-        <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
+        <button
+          onClick={() => {
+            push(
+              "/checkout/success?amount=" +
+                Math.round(
+                  carts.reduce(
+                    (init, product) => product.price * product.quantity + init,
+                    0
+                  ) + 4.99
+                )
+            );
+          }}
+          className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
+        >
           Place Order
         </button>
       </div>
