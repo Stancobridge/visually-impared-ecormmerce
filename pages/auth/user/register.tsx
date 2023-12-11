@@ -1,6 +1,7 @@
 import { FormProvider } from "react-hook-form";
 import { useRegisterUser } from "../../../base";
 import { Input } from "../../../components";
+import Link from "next/link";
 
 export default function UserRegisterScreen() {
   const { methods, registerUser } = useRegisterUser({
@@ -60,9 +61,9 @@ export default function UserRegisterScreen() {
               <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Login
               </button>
-              <a href="/auth/user/login" className="text-xs text-gray-500">
+              <Link href="/auth/user/login" className="text-xs text-gray-500">
                 Already has an account login here
-              </a>
+              </Link>
             </div>
           </form>
         </FormProvider>

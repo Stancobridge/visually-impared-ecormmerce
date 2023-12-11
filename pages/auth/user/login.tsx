@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FormProvider } from "react-hook-form";
 import { useLoginUser } from "../../../base";
 import { Input } from "../../../components";
@@ -48,9 +49,12 @@ export default function UserLoginScreen() {
               <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Login
               </button>
-              <a href="/auth/user/register" className="text-xs text-gray-500">
+              <Link
+                href="/auth/user/register"
+                className="text-xs text-gray-500"
+              >
                 No Account?
-              </a>
+              </Link>
             </div>
           </form>
         </FormProvider>
