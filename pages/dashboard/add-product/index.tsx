@@ -1,6 +1,18 @@
+import { useRouter } from "next/router";
+import { useLayoutEffect } from "react";
+import { useAuth } from "../../../base";
 import { AdminDashboardLayout, ChevronDown } from "../../../components";
 
 export default function AddProductPage() {
+  const { push } = useRouter();
+  const { user } = useAuth();
+
+  useLayoutEffect(() => {
+    if (!user?.isAdmin) {
+      push("/");
+    }
+  }, []);
+
   return (
     <AdminDashboardLayout>
       <div>

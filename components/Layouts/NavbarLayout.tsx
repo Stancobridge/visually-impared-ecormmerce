@@ -5,9 +5,11 @@ import {
   NavbarBrand,
   NavbarContent,
 } from "@nextui-org/react";
+import { useAuth } from "../../base";
 import { AcmeLogo, SearchIcon } from "../Icons";
 
 export const NavbarLayout = () => {
+  const { user, logOut } = useAuth();
   return (
     <Navbar isBordered>
       <NavbarContent justify="start">
@@ -24,6 +26,18 @@ export const NavbarLayout = () => {
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
+        {!user ? (
+          <>
+            <Link href="/auth/user/login">Login</Link>
+            <Link href="/auth/user/register">Register</Link>
+          </>
+        ) : null}
+        {user ? (
+          <>
+            <Link href="/cart">Cart</Link>
+            <button onClick={logOut}>Logout</button>
+          </>
+        ) : null}
         <form>
           <Input
             classNames={{

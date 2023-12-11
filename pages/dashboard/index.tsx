@@ -1,6 +1,16 @@
+import { useRouter } from "next/router";
+import { useLayoutEffect } from "react";
+import { useAuth } from "../../base";
 import { AdminDashboardLayout } from "../../components";
 
 export default function DashboardPage() {
+  const { push } = useRouter();
+  const { user } = useAuth();
+  useLayoutEffect(() => {
+    if (!user?.isAdmin) {
+      push("/");
+    }
+  }, []);
   return (
     <AdminDashboardLayout>
       <div>
