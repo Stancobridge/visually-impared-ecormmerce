@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white p-8">
@@ -5,10 +7,18 @@ export function Footer() {
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
           <h2 className="text-2xl font-bold mb-4">Company</h2>
           <ul>
-            <li className="mb-2">About Us</li>
-            <li className="mb-2">Contact Us</li>
-            <li className="mb-2">Privacy Policy</li>
-            <li className="mb-2">Terms of Service</li>
+            <li className="mb-2">
+              <Link href="/about">About Us </Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/contact">Contact Us</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/policy">Privacy Policy</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/terms">Terms of Service</Link>
+            </li>
           </ul>
         </div>
 

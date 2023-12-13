@@ -1,5 +1,5 @@
-import { ContactUs } from "../components";
+import { AboutUs } from "../components";
 
-export default function ContactUsPage() {
-  return <ContactUs />;
+export default function AboutUsPage() {
+  return <AboutUs />;
 }

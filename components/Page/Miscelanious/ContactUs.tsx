@@ -1,27 +1,107 @@
+import { useState } from "react";
+
 export const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    // Add logic for form submission or API call here
+    console.log("Form submitted:", formData);
+  };
   return (
-    <div className="bg-gray-100 rounded-lg">
-      <p className="p-5">
-        This site was designed by a student with the ID <strong>2252938</strong>{" "}
-        to solve the problems of visually impaired people on e-commerce portals.
-        <br />
-        <br />
-        Welcome to our Web Accessibility Hub, where we are committed to
-        fostering an inclusive digital experience for all. At the core of our
-        mission is the belief that the internet should be accessible to
-        everyone, regardless of abilities or disabilities.
-        <br />
-        <br />
-        Our platform serves as a comprehensive resource for businesses, and
-        individuals seeking to enhance the accessibility of their online
-        content. From informative articles and tutorials to cutting-edge tools
-        and best practices, we strive to empower our users with an interface
-        that is usable and enjoyable for people of all abilities.
-        <br />
-        <br />
-        Join us on the journey towards a more accessible and inclusive digital
-        landscape, where everyone can fully participate in the online world.
-      </p>
+    <div className="flex">
+      <div className="container mx-auto mt-8">
+        <div className="w-1/3 pr-4 flex items-center my-3 ">
+          <div className="flex items-center mr-2">
+            <span className="text-gray-700">Email:</span>
+          </div>
+          <p className="text-lg font-semibold">info@loligrivisual.com</p>
+        </div>
+
+        <div className="flex items-center mr-2 my-3">
+          <div className="flex items-center mr-2">
+            <span className="text-gray-700">Phone:</span>
+          </div>
+          <p className="text-lg font-semibold">+1 (44) 456-7890</p>
+        </div>
+
+        <div className="flex items-center mr-2">
+          <div className="flex items-center mr-2">
+            {/* <LocatIn className="h-6 w-6 mr-2" /> */}
+            <span className="text-gray-700">Address:</span>
+          </div>
+          <p className="text-lg font-semibold">
+            123 Main Street, Cityville, State, 12345
+          </p>
+        </div>
+      </div>
+      <div className="container mx-auto mt-8">
+        <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+        <form onSubmit={handleSubmit} className="max-w-md">
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700 font-semibold">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-semibold"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="message"
+              className="block text-gray-700 font-semibold"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={4}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
