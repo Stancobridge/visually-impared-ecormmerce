@@ -5,13 +5,12 @@ import { NavbarLayout } from "./NavbarLayout";
 export const MainLayout = ({ children }: { children: ReactNode }) => {
   const { setQueryHeaders } = useQueryHeaders();
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
       <NavbarLayout />
-      <div className="max-w-[1024px] m-auto my-10">{children}</div>
+      <div className="max-w-[1324px] m-auto my-10">{children}</div>
     </>
   );
 };
