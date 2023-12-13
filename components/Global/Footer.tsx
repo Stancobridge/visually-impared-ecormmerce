@@ -25,19 +25,18 @@ export function Footer() {
         <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
           <h2 className="text-2xl font-bold mb-4">Categories</h2>
           <ul>
-            <li className="mb-2">Electronics</li>
-            <li className="mb-2">Clothing</li>
-            <li className="mb-2">Home & Living</li>
-            <li className="mb-2">Books</li>
-          </ul>
-        </div>
-
-        <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
-          <h2 className="text-2xl font-bold mb-4">Support</h2>
-          <ul>
-            <li className="mb-2">FAQs</li>
-            <li className="mb-2">Shipping & Returns</li>
-            <li className="mb-2">Customer Service</li>
+            <li className="mb-2">
+              <Link href="/?category=electronics">Electronics</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/?category=clothes">Clothing</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/?category=Children/Babies">Children & Babies</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/?category=Beauty">Beauty</Link>
+            </li>
           </ul>
         </div>
 
