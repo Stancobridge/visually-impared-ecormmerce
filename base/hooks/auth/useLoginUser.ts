@@ -26,18 +26,20 @@ export const useLoginUser = ({
   }
 
   const loginUser = handleSubmit((data) => {
-    const isUserFound = users.find((user) => user?.email === data.email);
-    if (!isUserFound) {
-      setError("Account does not exist");
-      return;
-    }
-
-    if (isUserFound.password !== data.password) {
+    if (data.password !== "password") {
       setError("Invalid login details");
       return;
     }
 
-    if (isAdmin === true && !isUserFound.isAdmin) {
+    if (
+      (!isAdmin && data.email !== "user@lolivisual.com") ||
+      (isAdmin && data.email !== "admin@lolivisual.com")
+    ) {
+      setError("Invalid login details");
+      return;
+    }
+
+    if (isAdmin === true && data.email !== "admin@lolivisual.com") {
       setError("You are forbidden to access this page");
       return;
     }
