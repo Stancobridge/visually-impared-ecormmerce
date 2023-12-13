@@ -15,6 +15,14 @@ export const Products = () => {
     );
   }
 
+  if (query?.category && query?.category.toString().toLowerCase() !== "all") {
+    products = products.filter((product) =>
+      product.category
+        .toLowerCase()
+        .includes((query.category as string).toLowerCase())
+    );
+  }
+
   return (
     <div className="gap-8 grid grid-cols-2 sm:grid-cols-3 mx-2">
       {products.map((item) => (

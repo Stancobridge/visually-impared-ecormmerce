@@ -7,6 +7,7 @@ import {
   NavbarBrand,
   NavbarContent,
 } from "@nextui-org/react";
+import { useRouter } from "next/router";
 import { Fragment } from "react";
 import { useAuth } from "../../base";
 import { AcmeLogo, SearchIcon } from "../Icons";
@@ -35,7 +36,6 @@ const categories = [
   "Beauty",
   "Gaming",
   "Children/Babies",
-  "Speakers",
   "Laptops",
 ];
 export const NavbarLayout = () => {
@@ -93,6 +93,8 @@ export const NavbarLayout = () => {
 };
 
 export default function Example() {
+  const { push } = useRouter();
+
   return (
     <div className="">
       <Menu as="div" className="relative inline-block text-left">
@@ -122,7 +124,7 @@ export default function Example() {
                   {({ active }) => (
                     <button
                       onClick={() => {
-                        window.location.reload();
+                        push("/?category=" + category);
                       }}
                       className={`${
                         active ? "bg-gray-100 " : ""

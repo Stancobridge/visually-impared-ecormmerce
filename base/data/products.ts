@@ -4,6 +4,7 @@ export const productsList = [
     title: "Xiaomi Poco M5S",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/20/2221591/1.jpg?8659",
     price: 5.5,
+    category: "phones",
     description: `NETWORK
 Technology: GSM / CDMA / HSPA / EVDO / LTE
 2G bands: GSM 850 / 900 / 1800 / 1900 - SIM 1 & SIM 2 ; CDMA 800
@@ -26,6 +27,7 @@ Resolution: 1080 x 2460 pixels (~396 ppi density)`,
   {
     id: "5365195a-41ef-4ea8-bbcf-10d814b08683",
     title: "Red Women Hair",
+    category: "Beauty",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/22/8261602/1.jpg?1035",
     price: 32.0,
     description: `Choose a wig for a day of Happiness!
@@ -45,6 +47,7 @@ Cleaning method: according to the fiber particles, wash with clean water`,
     title: "Stripe Gray Men Shirt",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/74/4192691/1.jpg?4291",
     price: 40.0,
+    category: "clothes",
     description: `For a manly and dynamic approach to casual living.
 The green colour gives you a sense of hope when you wear this short shirt. Men's fitted cotton polo t-shirt. It looks very smart and shows off your super attractive figure.   
 It fits comfortably and doesn't smell bad even if you sweat a lot. There are many Chinese men who like to wear it in the summer and in hot places to make them look handsome, look pretty and be manly. You can
@@ -58,6 +61,7 @@ Give your casual life a manly and energetic twist. Green fills you with hope whe
   {
     id: "b268ce82-f49d-4ecd-b305-50b85e9b8d94",
     title: "Nivea Cream",
+    category: "Beauty",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/68/9023401/1.jpg?5724",
     price: 5.3,
     description: `NIVEA Nourishing Cocoa Body Lotion provides 48h nourishing deep moisture care and noticeably smoother skin. The patented formula is using the knowledge, that our skin contains sufficient moisture in its deeper layers. The unique composition of skin’s own moisturizer, moisture-locking lipids and care providing oils bind and hold water in the skin thus the moisture cannot evaporate easily into the surrounding area. The skin is well protected from drying out, because water loss is reduced and the moisture level of the skin is increased. 
@@ -70,6 +74,7 @@ INGREDIENTS: Aqua, Glycerin, Cetearyl Alcohol, Isohexadecane, Isopropyl Palmitat
   {
     id: "a8894542-210a-43a7-84b3-c0a4151d1ac7",
     title: "Hikers 32 inches TV",
+    category: "Electronics",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/71/1897052/1.jpg?0761",
     price: 25.7,
     description: `Open the doors of your living room to a full multimedia experience
@@ -81,6 +86,7 @@ Explore the Hikers and discover the exceptional visual performance of this HD LE
   {
     id: "3b8d077f-74e8-40d3-b50a-b95d1b8d5b4a",
     title: "Female Lipsticks Pack",
+    category: "Beauty",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/41/381729/1.jpg?8655",
     price: 8.0,
     description: `Features:Long lasting effect, not easy to fade, the effect can last for long hours.Moisturizes lips, relieving lip dryness. Mini and lightweight size, easy to carry.Suitable for various occasions, such as dating, party, wedding, bar, ball, daily makeups, ect.Exquisite package, can be used as a gift to lover, friends or family.`,
@@ -88,6 +94,7 @@ Explore the Hikers and discover the exceptional visual performance of this HD LE
   {
     id: "3b2d6d98-2568-49a0-a091-bbda0ef464d8",
     title: "Discolor Lipstick",
+    category: "beauty",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/57/052754/1.jpg?8267",
     price: 7.5,
     description: `A unique lip gloss available in a wide variety of colours that can create a high-gloss, glass-like finish or a subtle sheen. Designed to be worn on its own, over lip pencil or lipstick, it's the perfect product for creating shine that lasts. It's pigmented, very shiny and can impart subtle or dramatic colour. It contains jojoba oil to help soften and condition the lips.
@@ -96,6 +103,7 @@ Wide range of socially trending colors for a variety of makeup looks • Non-sti
   {
     id: "b6292cc2-983f-4a67-b2e8-11acc7d35572",
     title: "Baby Cloth",
+    category: "Children/Babies",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/57/7282442/1.jpg?5423",
     price: 12.2,
     description: `Weaving with heart, meticulous craftsmanship, soft and shapely, with heart for you. This is the philosophy of our store. We use soft fabrics, the baby is comfortable to wear. Threaded stand-up collar, elastic and comfortable, windproof and warm. Shoulder open buckle design, easy for baby to put on and take off, care for the baby's neck skin.`,
@@ -103,6 +111,7 @@ Wide range of socially trending colors for a variety of makeup looks • Non-sti
   {
     id: "53cb1106-426f-4fcd-a69e-dbba2d2dfc46",
     title: "Play Station 3",
+    category: "Gaming",
     img: "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/48/6769312/1.jpg?1963",
     price: 45.2,
     description: `Packed with all the gaming fun you'd expect from PlayStation but in a case, this redesigned PlayStation 3 is smaller and lighter than ever before.
