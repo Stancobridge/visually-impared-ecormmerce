@@ -59,7 +59,7 @@ export default function UserRegisterScreen() {
 
             <div className="flex items-center justify-between mt-4">
               <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                Login
+                Register
               </button>
               <Link href="/auth/user/login" className="text-xs text-gray-500">
                 Already has an account login here
