@@ -61,7 +61,7 @@ export default function UserRegisterScreen() {
               <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Register
               </button>
-              <Link href="/auth/user/login" className="text-xs text-gray-500">
+              <Link href="/auth/admin/login" className="text-xs text-gray-500">
                 Already has an account login here
               </Link>
             </div>
